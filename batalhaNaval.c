@@ -43,7 +43,7 @@ int main() {
 
     printf("\n");
     
-    int *tabuleiro[10] [10] = {
+    /*int *tabuleiro[10] [10] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -54,8 +54,9 @@ int main() {
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 3, 3, 3, 3, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
-
+    };*/
+    
+    int *tabuleiro[10][10];
     for(int i = 0; i < 10; i++){
         if(i < 9){
         printf("%d ", i + 1);
@@ -63,10 +64,12 @@ int main() {
             printf("%d", i + 1);
         }
         for(int j = 0; j < 10; j++){
+            tabuleiro[i][j] = 0;
             printf(" %d", tabuleiro[i][j]);
         }
         printf("\n");
     }
+        
 
 printf("\n");
 return 0;
