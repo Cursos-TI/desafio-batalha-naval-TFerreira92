@@ -38,29 +38,16 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    char cabecalhocolunas[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    char cabecalhocolunas[11] = {' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; // PRINT DO CABEÇALHO NA POSIÇÃO CORRETA
     for(int i = 0; i < 11; i++){
         printf(" %c", cabecalhocolunas[i]);
     }
 
     printf("\n");
     
-    /*int *tabuleiro[10] [10] = {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 3, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 3, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 3, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 3, 3, 3, 3, 3},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };*/
-    
     int *tabuleiro[linhas][colunas];
     int navio;
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 10; i++){ //PRINT DO TABULEIRO FORMATADO
         if(i < 9){
         printf("%d ", i + 1);
         } else {
@@ -79,7 +66,33 @@ int main() {
         }
         printf("\n");
     }
-        
+
+printf("\n");    
+// MATRIZ COM FORMAS GEOMÉTRICAS
+
+    for(int i = 0; i < linhas; i++){
+        for(int j = 0; j < colunas; j++){
+            if((i == 4) || (j ==4)){ // FORMA EM CRUZ
+                tabuleiro[i][j] = 1;
+            } else if((i == 0) && (j == 7)){ // FORMA EM TRIÂNGULO
+                tabuleiro[i][j] = 2;
+            } else if((i == 1) && (j >= 6) && (j <= 8)){
+                tabuleiro[i][j] = 2;
+            } else if((i == 2) && (j >= 5) && (j <= 9)){
+                tabuleiro[i][j] = 2;
+            } else if(((i == 6) || (i == 8)) && (j == 1)){ // FORMA EM OCTAEDRO
+                tabuleiro[i][j] = 3;
+            } else if((i == 7) && (j >= 0) && (j <= 2)){
+                tabuleiro[i][j] = 3;
+            } else{       
+                tabuleiro[i][j] = 0;
+            }
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+
 
 printf("\n");
 return 0;
