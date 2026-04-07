@@ -67,9 +67,9 @@ int main() {
             printf("%d", i + 1);
         }
         for(int j = 0; j < 10; j++){
-            navio = (((i == 8) && (j >= 6)) || 
-            ((i >= 4) && (i <= 6) && (j == 1)) ||
-            ((i == j) && (i <= 4))) ? 1 : 0;
+            navio = (((i == 8) && (j >= 6)) || // navio 9G-9J
+            ((i >= 4) && (i <= 6) && (j == 1)) || // navio 5B-7B
+            ((i == j) && (i <= 4))) ? 1 : 0; // navio 1A-5E
             if(navio){                
                 tabuleiro[i][j] = 3;
             } else{            
